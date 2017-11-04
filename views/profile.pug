@@ -1,0 +1,94 @@
+extends layout.pug
+block content
+  form(action="user", method="post")
+    div.form-group
+      label Логин
+      input.form-control(type="text", name="username")
+    div.form-group
+      label Логин cпонсора
+      input.form-control(type="text", name="sponsor", value="testareg1", disabled="disabled")
+    div.form-group
+      label E-mail
+      input.form-control(type="text", name="email")
+    div.form-group
+      label Имя
+      input.form-control(type="text", name="firstName")
+    div.form-group
+      label Фамилия
+      input.form-control(type="text", name="secondName")
+    div.form-group
+      label Дата рождения
+      input.form-control(type="text", name="birthday")
+    div.form-group
+      label Номер телефона
+      input.form-control(type="text", name="phoneNumber")
+    div.form-group
+      label Дополнительный номер телефона
+      input.form-control(type="text", name="phoneNumber2")
+    div.form-group
+      label Skype
+      input.form-control(type="text", name="skype")
+    div.form-group
+      label Страна
+      select.form-control(name="country")
+        option(value="ru", selected=true) Россия
+        option(value="us") США
+        option(value="uk") Великобритания
+    div.form-group
+      label регион/штат/область/край
+      input.form-control(type="text", name="state")
+    div.form-group
+      label город
+      input.form-control(type="text", name="city")
+    div.form-group
+      label адрес
+      input.form-control(type="text", name="address")
+    div.form-group
+      label почтовый индекс
+      input.form-control(type="text", name="zipCode")
+    div.form-group
+      label ссылка на сайт
+      input.form-control(type="text", name="site")
+    div.form-group
+      label ссылка на одноклассники
+      input.form-control(type="text", name="odnoklassniki")
+    div.form-group
+      label ссылка на вконтакте
+      input.form-control(type="text", name="vk")
+    div.form-group
+      label ссылка на facebook
+      input.form-control(type="text", name="fb")
+    div.form-group
+      label ссылка на youtube
+      input.form-control(type="text", name="youtube")
+    div.form-group
+      label авто продление BS
+      select.form-control(name="autoExtensionBS")
+        option(value="0", selected=true) выключено
+        option(value="1") включено
+    div.form-group
+      label показывать мобильный
+      select.form-control(name="showMobile")
+        option(value="0", selected=true) выключено
+        option(value="1") включено
+    div.form-group
+      label показывать email
+      select.form-control(name="showEmail")
+        option(value="0", selected=true) выключено
+        option(value="1") включено
+    div.form-group
+      label показывать имя
+      select.form-control(name="showName")
+        option(value="0", selected=true) выключено
+        option(value="1") включено
+    div.form-group
+      label рассылка писем
+      select.form-control(name="deliveryEMail")
+        option(value="0", selected=true) выключено
+        option(value="1") включено
+    div.form-group
+      label рассылка СМС
+      select.form-control(name="deliverySMS")
+        option(value="0", selected=true) выключено
+        option(value="1") включено
+    button.btn.btn-default(type="submit") Изменить профиль

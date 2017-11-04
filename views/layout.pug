@@ -1,0 +1,26 @@
+html
+  head
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    link(href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css', rel='stylesheet')
+    title gen4me
+  body
+    nav.navbar.navbar-default
+      div.container-fluid
+        div.navbar-header
+          button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1", aria-expanded="false", aria-controls="navbar")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand Gem4me
+        div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li: a(href="/register") Регистрация
+            li: a(href="/login") Вход
+            li: a(href="/user/resetPassword") Восстановить пароль
+            li: a(href="/user") Профиль
+            li: a(href="/user/changePassword") Сменить пароль
+            li: a(href="/user/personalPartners") Партнеры
+            li: a(href="/user/note") Заметки
+    div.container-fluid
+      block content

@@ -1,0 +1,10 @@
+extends layout.pug
+block content
+  form(action="login", method="post")
+    div.form-group
+      label Имя пользователя
+      input.form-control(type="text", name="username")    
+    div.form-group
+      label Пароль
+      input.form-control(type="text", name="password")
+    button.btn.btn-default(type="submit") Войти
