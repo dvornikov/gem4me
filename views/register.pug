@@ -1,42 +1,39 @@
 extends layout.pug
 block content
-  if errors 
-    ul
-      for error in errors
-        li.alert.alert-danger!= error.msg
+  include errors.pug
       
   form(action="register", method="post")
     div.form-group
       label Логин cпонсора
-      input.form-control(type="text", name="sponsor", value="testareg1")
+      input.form-control(type="text", name="sponsor", value=(sponsor ? sponsor : "testareg1"), required=true)
     div.form-group
       label Логин
-      input.form-control(type="text", name="username")
+      input.form-control(type="text", name="username", required=true, value=username)
     div.form-group
       label E-mail
-      input.form-control(type="text", name="email")
+      input.form-control(type="text", name="email", required=true, value=email)
     div.form-group
       label Имя
-      input.form-control(type="text", name="firstName")
+      input.form-control(type="text", name="firstName", required=true, value=firstName)
     div.form-group
       label Фамилия
-      input.form-control(type="text", name="secondName")
+      input.form-control(type="text", name="secondName", required=true, value=secondName)
     div.form-group
       label Номер телефона
-      input.form-control(type="text", name="phone")
+      input.form-control(type="text", name="phone", required=true, value=phone)
     div.form-group
       label Страна
       select.form-control(name="country")
-        option(value="ru", selected=true) Россия
-        option(value="us") США
-        option(value="uk") Великобритания
+        option(value="ru", selected=country === "ru") Россия
+        option(value="us", selected=country === "us") США
+        option(value="uk", selected=country === "uk") Великобритания
     div.form-group
       label Пароль
-      input.form-control(type="password", name="password")
+      input.form-control(type="password", name="password", required=true)
     div.form-group
       label Финансовый пароль
-      input.form-control(type="password", name="finPassword")
+      input.form-control(type="password", name="finPassword", required=true)
     div.form-group
       label Skype
-      input.form-control(type="text", name="skype")
+      input.form-control(type="text", name="skype", value=skype)
     button.btn.btn-default(type="submit") Регистрация

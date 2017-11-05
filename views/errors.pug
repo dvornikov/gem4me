@@ -1,0 +1,5 @@
+if errors
+    div.alert.alert-danger
+      ul
+        for error in errors
+          li!= error.msg

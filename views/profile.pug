@@ -1,94 +1,95 @@
 extends layout.pug
 block content
+  include errors.pug
   form(action="user", method="post")
     div.form-group
       label Логин
-      input.form-control(type="text", name="username")
+      input.form-control(type="text", name="username", value=username)
     div.form-group
       label Логин cпонсора
-      input.form-control(type="text", name="sponsor", value="testareg1", disabled="disabled")
+      input.form-control(type="text", name="sponsor", value=(sponsor && sponsor.username), disabled="disabled")
     div.form-group
       label E-mail
-      input.form-control(type="text", name="email")
+      input.form-control(type="text", name="email", value=email)
     div.form-group
       label Имя
-      input.form-control(type="text", name="firstName")
+      input.form-control(type="text", name="firstName", value=firstName)
     div.form-group
       label Фамилия
-      input.form-control(type="text", name="secondName")
+      input.form-control(type="text", name="secondName", value=secondName)
     div.form-group
       label Дата рождения
-      input.form-control(type="text", name="birthday")
+      input.form-control(type="text", name="birthday", value=birthday)
     div.form-group
       label Номер телефона
-      input.form-control(type="text", name="phoneNumber")
+      input.form-control(type="text", name="phoneNumber", value=phoneNumber)
     div.form-group
       label Дополнительный номер телефона
-      input.form-control(type="text", name="phoneNumber2")
+      input.form-control(type="text", name="phoneNumber2", value=phoneNumber2)
     div.form-group
       label Skype
-      input.form-control(type="text", name="skype")
+      input.form-control(type="text", name="skype", value=skype)
     div.form-group
       label Страна
       select.form-control(name="country")
-        option(value="ru", selected=true) Россия
-        option(value="us") США
-        option(value="uk") Великобритания
+        option(value="ru", selected=country === 'RU') Россия
+        option(value="us", selected=country === 'US') США
+        option(value="uk", selected=country === 'UK') Великобритания
     div.form-group
       label регион/штат/область/край
-      input.form-control(type="text", name="state")
+      input.form-control(type="text", name="state", value=state)
     div.form-group
       label город
-      input.form-control(type="text", name="city")
+      input.form-control(type="text", name="city", value=city)
     div.form-group
       label адрес
-      input.form-control(type="text", name="address")
+      input.form-control(type="text", name="address", value=address)
     div.form-group
       label почтовый индекс
-      input.form-control(type="text", name="zipCode")
+      input.form-control(type="text", name="zipCode", value=zipCode)
     div.form-group
       label ссылка на сайт
-      input.form-control(type="text", name="site")
+      input.form-control(type="text", name="site", value=links && links.site)
     div.form-group
       label ссылка на одноклассники
-      input.form-control(type="text", name="odnoklassniki")
+      input.form-control(type="text", name="odnoklassniki", value=links && links.odnoklassniki)
     div.form-group
       label ссылка на вконтакте
-      input.form-control(type="text", name="vk")
+      input.form-control(type="text", name="vk", value=links && links.vk)
     div.form-group
       label ссылка на facebook
-      input.form-control(type="text", name="fb")
+      input.form-control(type="text", name="fb", value=links && links.fb)
     div.form-group
       label ссылка на youtube
-      input.form-control(type="text", name="youtube")
+      input.form-control(type="text", name="youtube", value=links && links.youtube)
     div.form-group
       label авто продление BS
       select.form-control(name="autoExtensionBS")
-        option(value="0", selected=true) выключено
-        option(value="1") включено
+        option(value="0", selected=!settings.autoExtensionBS) выключено
+        option(value="1", selected=settings.autoExtensionBS) включено
     div.form-group
       label показывать мобильный
       select.form-control(name="showMobile")
-        option(value="0", selected=true) выключено
-        option(value="1") включено
+        option(value="0", selected=!settings.showMobile) выключено
+        option(value="1", selected=settings.showMobile) включено
     div.form-group
       label показывать email
       select.form-control(name="showEmail")
-        option(value="0", selected=true) выключено
-        option(value="1") включено
+        option(value="0", selected=!settings.showEmail) выключено
+        option(value="1", selected=settings.showEmail) включено
     div.form-group
       label показывать имя
       select.form-control(name="showName")
-        option(value="0", selected=true) выключено
-        option(value="1") включено
+        option(value="0", selected=!settings.showName) выключено
+        option(value="1", selected=settings.showName) включено
     div.form-group
       label рассылка писем
       select.form-control(name="deliveryEMail")
-        option(value="0", selected=true) выключено
-        option(value="1") включено
+        option(value="0", selected=!settings.deliveryEmail) выключено
+        option(value="1", selected=settings.deliveryEmail) включено
     div.form-group
       label рассылка СМС
       select.form-control(name="deliverySMS")
-        option(value="0", selected=true) выключено
-        option(value="1") включено
+        option(value="0", selected=!settings.deliverySMS) выключено
+        option(value="1", selected=settings.deliverySMS) включено
     button.btn.btn-default(type="submit") Изменить профиль

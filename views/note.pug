@@ -1,0 +1,10 @@
+extends layout.pug
+block content
+  form(action="/user/note", method="post")
+    div.form-group
+      label Заметка
+      input.form-control(type="text", name="body", value=body, required=true)
+    div.form-group
+      label Заголовок
+      input.form-control(type="text", name="title", value=title)
+    button.btn.btn-default(type="submit") Отправить

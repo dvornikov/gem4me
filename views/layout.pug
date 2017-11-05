@@ -15,12 +15,16 @@ html
           a.navbar-brand Gem4me
         div#bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li: a(href="/register") Регистрация
-            li: a(href="/login") Вход
-            li: a(href="/user/resetPassword") Восстановить пароль
-            li: a(href="/user") Профиль
-            li: a(href="/user/changePassword") Сменить пароль
-            li: a(href="/user/personalPartners") Партнеры
-            li: a(href="/user/note") Заметки
+            if isUser
+              li: a(href="/user") Профиль
+              li: a(href="/user/changePassword") Сменить пароль
+              li: a(href="/user/personalPartners") Партнеры
+              li: a(href="/user/notes") Заметки
+              li: a(href="/logout") Выход
+            else
+              li: a(href="/register") Регистрация
+              li: a(href="/login") Вход
+              li: a(href="/user/resetPassword") Восстановить пароль
+            
     div.container-fluid
       block content

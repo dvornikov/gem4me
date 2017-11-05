@@ -1,0 +1,13 @@
+extends layout.pug
+block content
+    table.table
+      tr
+        th Логин
+        th Email
+        th Online
+      if partners
+        tr
+          for partner in partners
+            td!= partner.username
+            td!= partner.email
+            td!= partner.online
