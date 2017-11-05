@@ -1,8 +1,9 @@
+Для запуска: клонируем репозиторий и в директории выполняем:
 ```
 npm intall
 npm start
 ```
-OR
+или
 ```
 yarn install
 yarn run start
